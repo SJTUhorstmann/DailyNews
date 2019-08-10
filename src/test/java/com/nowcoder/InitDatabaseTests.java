@@ -1,8 +1,10 @@
 package com.nowcoder;
 
+import com.nowcoder.dao.CommentDAO;
 import com.nowcoder.dao.LoginTicketDAO;
 import com.nowcoder.dao.NewsDAO;
 import com.nowcoder.dao.UserDAO;
+import com.nowcoder.model.Comment;
 import com.nowcoder.model.LoginTicket;
 import com.nowcoder.model.News;
 import com.nowcoder.model.User;
@@ -29,6 +31,8 @@ public class InitDatabaseTests {
     @Autowired
     NewsDAO newsDAO;
 
+    @Autowired
+    CommentDAO commentDAO;
     @Autowired
     LoginTicketDAO loginTicketDAO;
 
@@ -67,6 +71,15 @@ public class InitDatabaseTests {
             loginTicketDAO.insert(loginTicket);
             loginTicket.setStatus(1);
             loginTicketDAO.updateStatus(ticket,loginTicket.getStatus());
+
+            Comment comment=new Comment();
+            comment.setContent("你好啊"+i);
+            comment.setCreatedDate(new Date());
+            comment.setEntityId(0);
+            comment.setEntityType(0);
+            comment.setStatus(0);
+            comment.setUserId(i);
+            commentDAO.addComment(comment);
         }
 
         Assert.assertEquals("newpassword", userDAO.selectById(1).getPassword());
