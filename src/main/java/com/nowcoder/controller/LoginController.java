@@ -33,7 +33,7 @@ public class LoginController {
                            @RequestParam(value = "rember",defaultValue = "0") int rem){
         try{
             Map<String,Object> map=userService.register(username,password);
-            if(map.isEmpty()){
+            if(map.containsKey("ticket")){
                 return ToutiaoUtil.getJSONString(0,"注册成功");
             }else{
                 return ToutiaoUtil.getJSONString(1,"注册异常");
@@ -51,7 +51,7 @@ public class LoginController {
                            @RequestParam(value = "rember",defaultValue = "0") int rem){
         try{
             Map<String,Object> map=userService.login(username,password);
-            if(map.isEmpty()){
+            if(map.containsKey("ticket")){
                 return ToutiaoUtil.getJSONString(0,"登陆成功");
             }else{
                 return ToutiaoUtil.getJSONString(1,"登陆失败");

@@ -1,12 +1,15 @@
 package com.nowcoder.service;
 
+import com.nowcoder.dao.LoginTicketDAO;
 import com.nowcoder.dao.UserDAO;
+import com.nowcoder.model.LoginTicket;
 import com.nowcoder.model.User;
 import com.nowcoder.util.ToutiaoUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -18,7 +21,8 @@ import java.util.UUID;
 public class UserService {
     @Autowired
     private UserDAO userDAO;
-
+    @Autowired
+    private LoginTicketDAO loginTicketDAO;
     public User getUser(int id) {
         return userDAO.selectById(id);
     }
@@ -66,6 +70,27 @@ public class UserService {
             map.put("msgpwd","密码不正确");
             return map;
         }
+        String ticket=addLoginTicket(user.getId());
+        map.put("ticket",ticket);
         return map;
+    }
+    private String addLoginTicket(int userId){
+        LoginTicket loginTicket=new LoginTicket();
+        loginTicket.setUserId(userId);
+        Date date=new Date();
+        date.setTime(date.getTime()+3600*24);
+        loginTicket.setTicket(UUID.randomUUID().toString().replace("-",""));
+        loginTicket.setStatus(0);
+        loginTicketDAO.insert(loginTicket);
+        return loginTicket.getTicket();
+//        User user=userDAO.selectByName(username);
+//        loginTicket.setUserId(user.getId());
+//        String ticket=UUID.randomUUID().toString().replace("-","");
+//        loginTicket.setTicket(ticket);
+//        loginTicket.setStatus(0);
+//        Date date=new Date();
+//        date.setTime(date.getTime()+3600*24);
+//        loginTicketDAO.insert(loginTicket);
+//        return ticket;
     }
 }
