@@ -94,4 +94,7 @@ public class UserService {
 //        loginTicketDAO.insert(loginTicket);
 //        return ticket;
     }
+    public void logout(String ticket){
+        loginTicketDAO.updateStatus(ticket,1);
+    }
 }
