@@ -18,4 +18,8 @@ public class NewsService {
     public List<News> getLatestNews(int userId, int offset, int limit) {
         return newsDAO.selectByUserIdAndOffset(userId, offset, limit);
     }
+
+    public News selectById(int newsId){
+        return newsDAO.getById(newsId);
+    }
 }
