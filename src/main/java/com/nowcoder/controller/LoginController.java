@@ -43,4 +43,22 @@ public class LoginController {
             return ToutiaoUtil.getJSONString(1,"注册异常");
         }
     }
+
+    @RequestMapping(path="login",method = {RequestMethod.POST,RequestMethod.GET})
+    @ResponseBody
+    public String login(Model model, @RequestParam("username") String username,
+                           @RequestParam("password") String password,
+                           @RequestParam(value = "rember",defaultValue = "0") int rem){
+        try{
+            Map<String,Object> map=userService.login(username,password);
+            if(map.isEmpty()){
+                return ToutiaoUtil.getJSONString(0,"登陆成功");
+            }else{
+                return ToutiaoUtil.getJSONString(1,"登陆失败");
+            }
+        }catch (Exception e){
+            logger.error("登陆失败"+e.getMessage());
+            return ToutiaoUtil.getJSONString(1,"登陆失败");
+        }
+    }
 }
