@@ -41,7 +41,11 @@
                     <li class=""><a href="http://nowcoder.com/explore">发现</a></li>
 
                     <li><a href="http://nowcoder.com/signin">站内信</a></li>
+                    #if ($user)
+                    <li class=""><a href="http://nowcoder.com/about">$!(user.name)</a></li>
+                    #else
                     <li class=""><a href="http://nowcoder.com/about">登陆</a></li>
+                    #end
                 </ul>
 
             </nav>

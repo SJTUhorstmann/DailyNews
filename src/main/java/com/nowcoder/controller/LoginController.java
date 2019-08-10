@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
@@ -47,11 +49,18 @@ public class LoginController {
     @RequestMapping(path="login",method = {RequestMethod.POST,RequestMethod.GET})
     @ResponseBody
     public String login(Model model, @RequestParam("username") String username,
-                           @RequestParam("password") String password,
-                           @RequestParam(value = "rember",defaultValue = "0") int rem){
+                        @RequestParam("password") String password,
+                        @RequestParam(value = "rember",defaultValue = "0") int rem,
+                        HttpServletResponse response){
         try{
             Map<String,Object> map=userService.login(username,password);
             if(map.containsKey("ticket")){
+                Cookie cookie=new Cookie("ticket",map.get("ticket").toString());
+                cookie.setPath("/");
+                if(rem>0){
+                    cookie.setMaxAge(24*3600*5);
+                }
+                response.addCookie(cookie);
                 return ToutiaoUtil.getJSONString(0,"登陆成功");
             }else{
                 return ToutiaoUtil.getJSONString(1,"登陆失败");
