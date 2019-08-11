@@ -29,6 +29,8 @@ public class MessageController {
     private MessageService messageService;
     @Autowired
     private UserService userService;
+    @Autowired
+    private HostHolder hostHolder;
     @RequestMapping(path="/msg/sendMessage",method = RequestMethod.POST)
     public String addMessage(@RequestParam("fromId") int fromId,
                              @RequestParam("toId") int toId,
@@ -71,12 +73,24 @@ public class MessageController {
         return "letterDetail";
     }
 
-    @RequestMapping(path="/msg/list",method = RequestMethod.GET)
-    public String conversationDetail(Model model){
+    @RequestMapping(path = {"/msg/list"}, method = {RequestMethod.GET})
+    public String conversationDetail(Model model) {
         try {
-
-        }catch (Exception e){
-            logger.error("获取站内信失败"+e.getMessage());
+            int localUserId = hostHolder.getUser().getId();
+            List<ViewObject> conversations = new ArrayList<ViewObject>();
+            List<Message> conversationList = messageService.getConversationList(localUserId, 0, 10);
+            for (Message msg : conversationList) {
+                ViewObject vo = new ViewObject();
+                vo.set("conversation", msg);
+                int targetId = msg.getFromId() == localUserId ? msg.getToId() : msg.getFromId();
+                User user = userService.getUser(targetId);
+                vo.set("user", user);
+                vo.set("unread", messageService.getConvesationUnreadCount(localUserId, msg.getConversationId()));
+                conversations.add(vo);
+            }
+            model.addAttribute("conversations", conversations);
+        } catch (Exception e) {
+            logger.error("获取站内信列表失败" + e.getMessage());
         }
         return "letter";
     }

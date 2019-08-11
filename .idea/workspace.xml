@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfd5c961-2287-40aa-9503-69faf3b127a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/MessageController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/dao/MessageDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/model/Message.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/service/MessageService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/letter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/letterDetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/NewsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/NewsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/nowcoder/InitDatabaseTests.java" afterPath="$PROJECT_DIR$/src/test/java/com/nowcoder/InitDatabaseTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/init-schema.sql" afterPath="$PROJECT_DIR$/src/test/resources/init-schema.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/MessageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/nowcoder/controller/MessageController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,27 +65,27 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/nowcoder/InitDatabaseTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="57">
-              <caret line="80" column="47" lean-forward="true" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
+              <caret line="80" column="47" lean-forward="false" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ToutiaoApplication.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ToutiaoApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nowcoder/ToutiaoApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="108">
+              <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nowcoder/controller/MessageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="732">
-              <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state relative-caret-position="219">
+              <caret line="79" column="73" lean-forward="true" selection-start-line="79" selection-start-column="73" selection-end-line="79" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1089,7 +1081,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565424847054</updated>
       <workItem from="1565424849585" duration="22007000" />
-      <workItem from="1565502959092" duration="6898000" />
+      <workItem from="1565502959092" duration="7264000" />
     </task>
     <servers />
   </component>
@@ -1126,7 +1118,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28905000" />
+    <option name="totallyTimeSpent" value="29271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -1204,7 +1196,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/nowcoder/controller/MessageController.java</url>
-          <line>53</line>
+          <line>55</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -1565,16 +1557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nowcoder/controller/NewsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="86" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nowcoder/model/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1052">
@@ -1615,7 +1597,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/nowcoder/InitDatabaseTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
-          <caret line="80" column="47" lean-forward="true" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
+          <caret line="80" column="47" lean-forward="false" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -1664,10 +1646,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nowcoder/controller/MessageController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nowcoder/controller/NewsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
-          <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="26" column="86" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1676,9 +1658,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nowcoder/ToutiaoApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="108">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nowcoder/controller/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="79" column="73" lean-forward="true" selection-start-line="79" selection-start-column="73" selection-end-line="79" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
