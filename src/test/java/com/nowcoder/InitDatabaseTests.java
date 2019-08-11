@@ -1,10 +1,8 @@
 package com.nowcoder;
 
-import com.nowcoder.dao.CommentDAO;
-import com.nowcoder.dao.LoginTicketDAO;
-import com.nowcoder.dao.NewsDAO;
-import com.nowcoder.dao.UserDAO;
+import com.nowcoder.dao.*;
 import com.nowcoder.model.*;
+import org.aspectj.bridge.MessageWriter;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,6 +30,9 @@ public class InitDatabaseTests {
     CommentDAO commentDAO;
     @Autowired
     LoginTicketDAO loginTicketDAO;
+
+    @Autowired
+    MessageDAO messageDAO;
 
     @Test
     public void initData() {
@@ -79,6 +80,14 @@ public class InitDatabaseTests {
                 comment.setUserId(i);
                 commentDAO.addComment(comment);
             }
+            Message message=new Message();
+            message.setFromId(i);
+            message.setToId(i+100);
+            message.setContent("我是"+i);
+            message.setCreatedDate(new Date());
+            message.setHasRead(0);
+            message.setConversationId(i+100+"_"+i);
+            messageDAO.addMessage(message);
         }
 
         Assert.assertEquals("newpassword", userDAO.selectById(1).getPassword());

@@ -70,6 +70,6 @@ public class NewsController {
         }catch (Exception e){
             logger.error("添加评论失败"+e.getMessage());
         }
-
+        return "redirect:/news/" + String.valueOf(newsId);
     }
 }
