@@ -68,7 +68,7 @@
         -->
 
         <div class="post-comment-form">
-            #if($user)
+            <!--#if($user)-->
             <span>评论 ($!{news.commentCount})</span>
             <form method="post" action="/addComment">
                 <input name="newsId" type="hidden" value="$!{news.id}">
@@ -82,11 +82,11 @@
                     <input type="submit" name="commit" value="提 交" class="btn btn-default btn-info">
                 </div>
             </form>
-            #else
-            <div class="login-actions">
-                <a class="btn btn-success" href="/?pop=1">登录后评论</a>
-            </div>
-            #end
+            <!--#else-->
+            <!--<div class="login-actions">-->
+                <!--<a class="btn btn-success" href="/?pop=1">登录后评论</a>-->
+            <!--</div>-->
+            <!--#end-->
         </div>
 
         <div id="comments" class="comments">

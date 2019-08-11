@@ -4,10 +4,7 @@ import com.nowcoder.dao.CommentDAO;
 import com.nowcoder.dao.LoginTicketDAO;
 import com.nowcoder.dao.NewsDAO;
 import com.nowcoder.dao.UserDAO;
-import com.nowcoder.model.Comment;
-import com.nowcoder.model.LoginTicket;
-import com.nowcoder.model.News;
-import com.nowcoder.model.User;
+import com.nowcoder.model.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -72,14 +69,16 @@ public class InitDatabaseTests {
             loginTicket.setStatus(1);
             loginTicketDAO.updateStatus(ticket,loginTicket.getStatus());
 
-            Comment comment=new Comment();
-            comment.setContent("你好啊"+i);
-            comment.setCreatedDate(new Date());
-            comment.setEntityId(0);
-            comment.setEntityType(0);
-            comment.setStatus(0);
-            comment.setUserId(i);
-            commentDAO.addComment(comment);
+            for(int j=0;j<3;j++){
+                Comment comment=new Comment();
+                comment.setContent("你好啊"+j);
+                comment.setCreatedDate(new Date());
+                comment.setEntityId(news.getId());
+                comment.setEntityType(EntityType.ENTITY_NEWS);
+                comment.setStatus(0);
+                comment.setUserId(i);
+                commentDAO.addComment(comment);
+            }
         }
 
         Assert.assertEquals("newpassword", userDAO.selectById(1).getPassword());
